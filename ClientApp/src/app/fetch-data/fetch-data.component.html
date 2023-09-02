@@ -1,24 +1,26 @@
-<h1 id="tableLabel">Weather forecast</h1>
+<h1>Turnos</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>Turnos generados hasta la fecha.</p>
 
-<p *ngIf="!forecasts?.length"><em>Loading...</em></p>
+<p *ngIf="!turnos?.length"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts.length">
+<button (click)="getTurnos('weatherforecast/getWeather')">Mostrar Turnos</button>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="turnos.length">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
+      <th>Fecha</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Tipo De Peinado</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+    <tr *ngFor="let turno of turnos">
+      <td>{{ turno.fecha }}</td>
+      <td>{{ turno.nombre }}</td>
+      <td>{{ turno.apellido }}</td>
+      <td>{{ turno.tipoPeinado }}</td>
     </tr>
   </tbody>
 </table>
