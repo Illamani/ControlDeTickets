@@ -2,23 +2,19 @@
 
 <p>Esta pagina nos permitira agendar turnos.</p>
 
-<form>
+<form #turnoForm="ngForm" (ngSubmit)="getUserFormData(turnoForm.value)">
   <p>
     Nombre
-    <input type="text" maxlength="10" [(ngModel)]="turnoForm.nombre" name="nombre" />
+    <input type="text" ngModel maxlength="10" name="nombre" />
   </p>
   <p>
     Apellido
-    <input type="text" maxlength="10" [(ngModel)]="turnoForm.apellido" name="apellido"/>
-  </p>
-  <p>
-    Fecha
-    <input type="text" maxlength="10" [(ngModel)]="turnoForm.fecha" name="fecha"/>
+    <input type="text" ngModel maxlength="10" name="apellido" />
   </p>
   <p>
     Tipo de Peinado
-    <input type="text" maxlength="10" [(ngModel)]="turnoForm.tipoPeinado" name="tipoPeinado"/>
+    <input type="text" ngModel maxlength="10" name="tipoPeinado" />
   </p>
+  <button class="btn btn-primary">Guardar Turno</button>
 </form>
 
-<button class="btn btn-primary" (click)="mostrarEnConsola()">Guardar Turno</button>

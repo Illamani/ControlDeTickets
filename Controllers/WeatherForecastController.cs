@@ -59,5 +59,12 @@ namespace FirstAngularNetProyect.Controllers
 				TipoPeinado = TiposPeinados[Random.Shared.Next(TiposPeinados.Length)]
 			}).ToList();
 		}
+
+		[HttpPost]
+		public string InsertTurnos([FromBody]Turnos turnos)
+		{
+			var prueba = "hola";
+			return prueba;
+		}
 	}
 }
