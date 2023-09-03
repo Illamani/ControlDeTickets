@@ -4,7 +4,7 @@
 
 <p *ngIf="!turnos?.length"><em>Loading...</em></p>
 
-<button (click)="getTurnos('weatherforecast/getWeather')">Mostrar Turnos</button>
+<button (click)="getTurnos('weatherforecast/getTurnos')">Mostrar Turnos</button>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="turnos.length">
   <thead>

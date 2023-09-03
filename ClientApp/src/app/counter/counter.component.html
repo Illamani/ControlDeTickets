@@ -1,7 +1,24 @@
-<h1>Counter</h1>
+<h1>Agendar</h1>
 
-<p>This is a simple example of an Angular component.</p>
+<p>Esta pagina nos permitira agendar turnos.</p>
 
-<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
+<form>
+  <p>
+    Nombre
+    <input type="text" maxlength="10" [(ngModel)]="turnoForm.nombre" name="nombre" />
+  </p>
+  <p>
+    Apellido
+    <input type="text" maxlength="10" [(ngModel)]="turnoForm.apellido" name="apellido"/>
+  </p>
+  <p>
+    Fecha
+    <input type="text" maxlength="10" [(ngModel)]="turnoForm.fecha" name="fecha"/>
+  </p>
+  <p>
+    Tipo de Peinado
+    <input type="text" maxlength="10" [(ngModel)]="turnoForm.tipoPeinado" name="tipoPeinado"/>
+  </p>
+</form>
 
-<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>
+<button class="btn btn-primary" (click)="mostrarEnConsola()">Guardar Turno</button>

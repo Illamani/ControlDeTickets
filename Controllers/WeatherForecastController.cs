@@ -48,7 +48,7 @@ namespace FirstAngularNetProyect.Controllers
 		}
 
 		[HttpGet]
-		[Route("getWeather")]
+		[Route("getTurnos")]
 		public List<Turnos> GetTurnos()
 		{
 			return Enumerable.Range(1, 5).Select(index => new Turnos
