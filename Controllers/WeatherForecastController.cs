@@ -53,7 +53,7 @@ namespace FirstAngularNetProyect.Controllers
 		{
 			return Enumerable.Range(1, 5).Select(index => new Turnos
 			{
-				Fecha = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+				Fecha = DateTime.Now.AddDays(index),
 				Nombre = Nombres[Random.Shared.Next(Nombres.Length)],
 				Apellido = Apellidos[Random.Shared.Next(Apellidos.Length)],
 				TipoPeinado = TiposPeinados[Random.Shared.Next(TiposPeinados.Length)]
@@ -61,7 +61,7 @@ namespace FirstAngularNetProyect.Controllers
 		}
 
 		[HttpPost]
-		public string InsertTurnos([FromBody]Turnos turnos)
+		public string InsertTurnos(Turnos turnos)
 		{
 			var prueba = "hola";
 			return prueba;
