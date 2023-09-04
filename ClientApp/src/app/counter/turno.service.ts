@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TurnoService {
-  private apiUrl = 'https://localhost:44422/weatherforecast/insertTurnos';
-  private api = 'https://localhost:44422/weatherforecast';
+  private apiUrl = 'https://localhost:44422/turno/insertTurnos';
+  private api = 'https://localhost:44422/turno';
   constructor(private http: HttpClient) { }
 
   guardarTurno(turnoData: any): Observable<any> {

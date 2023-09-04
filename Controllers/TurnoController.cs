@@ -4,9 +4,8 @@ namespace FirstAngularNetProyect.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]
-	public class WeatherForecastController : ControllerBase
+	public class TurnoController : ControllerBase
 	{
-
 		private static readonly string[] Nombres = new[]
 		{
 		"Brisa", "Jennifer", "Andrea", "Camila", "Maira", "Wanda", "Barbara", "Guillermina", "Sofia", "Lucia"
@@ -23,17 +22,14 @@ namespace FirstAngularNetProyect.Controllers
 		"Moño desenfadado", "Recogido bajo con trenza en espiga", "Falsa tenza", "Moño elegante", "Trenzas boho"
 		};
 
-		private readonly ILogger<WeatherForecastController> _logger;
-		private readonly AppDbContext _dbContext;
+		private readonly ILogger<TurnoController> _logger;
 
-		public WeatherForecastController(ILogger<WeatherForecastController> logger, AppDbContext dbContext)
+		public TurnoController(ILogger<TurnoController> logger)
 		{
 			_logger = logger;
-			_dbContext = dbContext;
 		}
 
 		[HttpGet]
-		[Route("getTurnos")]
 		public List<Turnos> GetTurnos()
 		{
 			return Enumerable.Range(1, 5).Select(index => new Turnos
@@ -46,11 +42,10 @@ namespace FirstAngularNetProyect.Controllers
 		}
 
 		[HttpPost]
-		[Route("InsertTurnos")]
-		public async void InsertTurnos(Turnos turnos)
+		public string InsertTurnos(Turnos turnos)
 		{
-			var turno = _dbContext.Turnos.Add(turnos);
-			await _dbContext.SaveChangesAsync();
+			var prueba = "hola";
+			return prueba;
 		}
 	}
 }
